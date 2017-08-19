@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import os
 
 app = Flask(__name__)
 
@@ -10,7 +11,8 @@ def main():
 
 @app.route('/dist_control')
 def admin():
-    return render_template('admin.html')
+    assets = os.listdir(os.path.join(app.root_path, 'static', 'assets'))
+    return render_template('admin.html', assets=assets)
 
 
 if __name__ == '__main__':

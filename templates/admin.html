@@ -10,5 +10,9 @@
 </head>
 <body>
 
+{% for asset in assets %}
+    <img src="/static/assets/{{ asset }}">
+{% endfor %}
+
 </body>
 </html>
