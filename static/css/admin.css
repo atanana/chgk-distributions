@@ -1,4 +1,13 @@
 img {
     max-height: 200px;
     max-width: 200px;
+
+    vertical-align: middle;
+}
+
+label {
+    display: block;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

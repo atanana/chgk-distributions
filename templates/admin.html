@@ -8,11 +8,18 @@
 
     <link rel="stylesheet" href="/static/css/admin.css">
 </head>
-<body>
 
 {% for asset in assets %}
-    <img src="/static/assets/{{ asset }}">
+    <label>
+        <input type="radio" name="asset" value="{{ asset }}"/>
+        <img src="/static/assets/{{ asset }}">
+    </label>
 {% endfor %}
+
+<label>
+    <input type="radio" name="asset" value=""/>
+    Без раздатки
+</label>
 
 </body>
 </html>
