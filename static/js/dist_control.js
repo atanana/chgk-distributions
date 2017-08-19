@@ -1,28 +1,10 @@
 var socket = io.connect('http://' + document.domain + ':' + location.port);
 
-
-var onChange = function () {
-    var radio = findSelectedRadio();
-    if (radio) {
-        socket.emit('asset select', {name: radio.value});
-    }
+var onChange = function (event) {
+    socket.emit('asset select', {name: event.target.value});
 };
 
-function findSelectedRadio() {
-    var radios = findRadios();
-    for (var i = 0; i < radios.length; i++) {
-        var radio = radios[i];
-        if (radio.checked) {
-            return radio;
-        }
-    }
-}
-
-function findRadios() {
-    return document.querySelectorAll('input[type=radio]');
-}
-
-findRadios()
+document.querySelectorAll('input[type=radio]')
     .forEach(function (input) {
         input.onchange = onChange;
     });
