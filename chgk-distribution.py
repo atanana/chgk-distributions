@@ -9,7 +9,7 @@ selected_asset = ''
 
 @app.route('/')
 def main():
-    return app.send_static_file('main.html')
+    return render_template('main.html', selected_asset=selected_asset)
 
 
 @app.route('/dist_control')
