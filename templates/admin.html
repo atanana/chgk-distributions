@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>Управление раздатками</title>
 
-    <script src="/static/js/dist_control.js"></script>
-
     <link rel="stylesheet" href="/static/css/admin.css">
 </head>
 
@@ -17,9 +15,12 @@
 {% endfor %}
 
 <label>
-    <input type="radio" name="asset" value=""/>
+    <input type="radio" name="asset" value="" checked/>
     Без раздатки
 </label>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+<script src="/static/js/dist_control.js"></script>
 
 </body>
 </html>
