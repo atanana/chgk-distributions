@@ -15,6 +15,7 @@ def main():
 @app.route('/dist_control')
 def admin():
     assets = os.listdir(os.path.join(app.root_path, 'static', 'assets'))
+    assets = filter(lambda asset: not asset.startswith('.'), assets)
     return render_template('admin.html', assets=assets, selected_asset=selected_asset)
 
 
