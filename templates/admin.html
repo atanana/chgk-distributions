@@ -9,13 +9,13 @@
 
 {% for asset in assets %}
     <label>
-        <input type="radio" name="asset" value="{{ asset }}"/>
+        <input type="radio" name="asset" value="{{ asset }}" {{ 'checked' if asset == selected_asset else '' }}/>
         <img src="/static/assets/{{ asset }}">
     </label>
 {% endfor %}
 
 <label>
-    <input type="radio" name="asset" value="" checked/>
+    <input type="radio" name="asset" value="" {{ 'checked' if '' == selected_asset else '' }}/>
     Без раздатки
 </label>
 
