@@ -1,12 +1,10 @@
 var socket = io.connect('http://' + document.domain + ':' + location.port);
-socket.on('connect', function () {
-    socket.emit('my event', {data: 'I\'m connected!'});
-});
+
 
 var onChange = function () {
     var radio = findSelectedRadio();
     if (radio) {
-        console.log(radio.value)
+        socket.emit('asset select', {name: radio.value});
     }
 };
 
