@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask_socketio import SocketIO
+from flask_socketio import SocketIO, emit
 import os
 
 app = Flask(__name__)
@@ -23,6 +23,7 @@ def handle_asset_select(data):
     global selected_asset
     selected_asset = data['name']
     print('select ' + data['name'])
+    emit('asset change', {'name': selected_asset}, broadcast=True)
 
 
 if __name__ == '__main__':
