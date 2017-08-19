@@ -15,11 +15,12 @@ def main():
 @app.route('/dist_control')
 def admin():
     assets = os.listdir(os.path.join(app.root_path, 'static', 'assets'))
-    return render_template('admin.html', assets=assets)
+    return render_template('admin.html', assets=assets, selected_asset=selected_asset)
 
 
 @socketio.on('asset select')
 def handle_asset_select(data):
+    global selected_asset
     selected_asset = data['name']
     print('select ' + data['name'])
 
