@@ -11,6 +11,7 @@
     <label>
         <input type="radio" name="asset" value="{{ asset }}" {{ 'checked' if asset == selected_asset else '' }}/>
         <img src="/static/assets/{{ asset }}">
+        {{ asset }}
     </label>
 {% endfor %}
 
